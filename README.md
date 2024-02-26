@@ -1,1 +1,1 @@
-Верста сайта MyLibrary - https://adika-ka.github.io/Library/
+Верстrа сайта MyLibrary - https://adika-ka.github.io/Library/
