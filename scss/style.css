@@ -14,6 +14,16 @@ body {
   font-family: "Inter";
 }
 
+.modal--active .header {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal--active .main {
+  opacity: 0.4;
+}
+.modal--active .footer {
+  opacity: 0.4;
+}
+
 li {
   list-style: none;
 }
@@ -97,17 +107,143 @@ a:hover {
 
 .header__logo {
   padding: 0 1px 0 12px;
+  cursor: pointer;
+}
+.header__logo img:hover {
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.header__logo--active .logo__modal {
+  display: block;
+}
+
+.logo__modal {
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 10px;
+  z-index: 3;
+  width: 80px;
+  height: 115px;
+  background-color: #fff;
+  text-align: center;
+  padding: 5px 10px 20px;
+  font-size: 15px;
+}
+
+.logo-modal__title {
+  font-weight: 700;
+  line-height: 20px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.logo-modal__title span {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: #bb945f;
+  position: absolute;
+  top: 25px;
+  left: 10px;
+}
+
+.logo-modal__log {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.logo-modal__reg {
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  z-index: 10;
+  position: absolute;
+  top: 100px;
+  left: 43%;
+  width: 250px;
+  padding: 20px 25px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.modal__sing--active {
+  display: block;
+}
+
+.modal__close {
+  position: absolute;
+  top: -50px;
+  right: -10px;
+}
+
+.modal__close-register {
+  position: absolute;
+  top: -50px;
+  right: -10px;
+}
+
+.close {
+  display: none;
+}
+
+.modal__title {
+  font-family: Forum;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.modal__form {
+  position: relative;
+}
+
+.modal__label {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.modal__input {
+  width: 200px;
+  margin-bottom: 10px;
+  border-color: #bb945f;
+}
+
+.modal__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.modal__choice {
+  display: flex;
+  align-items: center;
+}
+
+.choice__text {
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+.choice__link {
+  font-size: 10px;
+  font-weight: 700;
+  text-decoration: underline;
+  color: #000;
 }
 
 @media (max-width: 1025px) {
   .menu__icon {
     z-index: 2;
     display: block;
-    position: relative;
     width: 45px;
     height: 20px;
     margin-top: -7px;
     cursor: pointer;
+    position: relative;
   }
   .menu__icon span, .menu__icon::before, .menu__icon::after {
     position: absolute;
@@ -244,12 +380,6 @@ a:hover {
 
 .slider__item {
   margin: 0 12.5px;
-}
-.slider__item:nth-child(4) {
-  display: none;
-}
-.slider__item:nth-child(5) {
-  display: none;
 }
 
 .slider__controls {
@@ -790,4 +920,7 @@ a:hover {
     line-height: 20px;
     letter-spacing: 2px;
   }
+}
+.modal__input:invalid {
+  border: 1px solid red;
 }/*# sourceMappingURL=style.css.map */

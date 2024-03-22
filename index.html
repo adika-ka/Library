@@ -53,13 +53,85 @@
                   </li>
                 </ul>
               </nav>
-              <a class="header__logo" href="#">
+              <div class="header__logo" href="#">
                 <img src="./img/icons/icon_profile.svg" alt="#" />
-              </a>
+                <div class="logo__modal">
+                  <div class="logo-modal__title">Profile<span></span></div>
+                  <div class="logo-modal__log">Log In</div>
+                  <div class="logo-modal__reg">Register</div>
+                </div>
+              </div>
               <div class="menu__icon">
                 <span></span>
               </div>
             </div>
+          </div>
+          <div class="modal modal__logIn">
+            <div class="modal__title">LOGIN<span></span></div>
+            <form class="modal__form" name="Login">
+              <p class="modal__label">E-mail or readers card</p>
+              <input class="modal__input" type="email" id="email" />
+              <p class="modal__label">Password</p>
+              <input class="modal__input" type="password" id="pass" />
+              <button class="modal__btn gallery-item__btn btn glow-on-hover">
+                Log In
+              </button>
+              <div class="modal__choice">
+                <div class="choice__text">Don’t have an account?</div>
+                <a href="#" class="choice__link">Register</a>
+              </div>
+              <div class="modal__close">
+                <img src="./img/icons/close_btn.svg" alt="" />
+              </div>
+            </form>
+          </div>
+          <div class="modal modal__register">
+            <div class="modal__title">REGISTER<span></span></div>
+            <form class="modal__form" id="registerForm" name="Register">
+              <p class="modal__label">First name</p>
+              <input
+                class="modal__input"
+                required
+                type="text"
+                name="firstName"
+                id="name"
+              />
+              <p class="modal__label">Last name</p>
+              <input
+                class="modal__input"
+                required
+                type="text"
+                name="lastName"
+                id="LastName"
+              />
+              <p class="modal__label">E-mail or readers card</p>
+              <input
+                class="modal__input"
+                required
+                type="email"
+                name="email"
+                pattern="[^|\w](\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)"
+                id="email-reg"
+              />
+              <p class="modal__label">Password</p>
+              <input
+                class="modal__input"
+                required
+                name="password"
+                type="password"
+                id="pass-reg"
+              />
+              <button class="modal__btn gallery-item__btn btn" type="submit">
+                Sign Up
+              </button>
+              <div class="modal__choice">
+                <div class="choice__text">Don’t have an account?</div>
+                <a href="#" class="choice__link">Login</a>
+              </div>
+              <div class="modal__close-register">
+                <img src="./img/icons/close_btn.svg" alt="" />
+              </div>
+            </form>
           </div>
         </header>
       </div>
@@ -82,21 +154,22 @@
               </div>
               <div class="about__slider">
                 <div class="slider__row">
-                  <div class="slider__items">
-                    <img class="slider__item" src="./img/slider0.jpg" alt="" />
-                    <img class="slider__item" src="./img/slider1.jpg" alt="" />
-                    <img class="slider__item" src="./img/slider2.jpg" alt="" />
-                    <img class="slider__item" src="./img/slider3.jpg" alt="" />
-                    <img class="slider__item" src="./img/slider4.jpg" alt="" />
-                  </div>
+                  <div class="slider__items"></div>
                   <div class="slider__controls">
                     <span
                       class="controls__circle controls__circle--active"
+                      data-id="0"
                     ></span>
-                    <span class="controls__circle"></span>
-                    <span class="controls__circle"></span>
-                    <span class="controls__circle controls__circle--tel"></span>
-                    <span class="controls__circle controls__circle--tel"></span>
+                    <span class="controls__circle" data-id="1"></span>
+                    <span class="controls__circle" data-id="2"></span>
+                    <span
+                      class="controls__circle controls__circle--tel"
+                      data-id="3"
+                    ></span>
+                    <span
+                      class="controls__circle controls__circle--tel"
+                      data-id="4"
+                    ></span>
                   </div>
                 </div>
               </div>
@@ -109,46 +182,25 @@
             <div class="favorites__gallery">
               <div class="gallery__label">Pick favorites of season</div>
               <div class="gallery__seasons">
-                <label class="gallery__season--active">
-                  <input
-                    class="gallery__season"
-                    checked
-                    type="radio"
-                    name="season"
-                    id=""
-                  />
+                <label class="gallery__season gallery__season--active">
+                  <input checked type="radio" name="season" id="winter" />
                   Winter
                 </label>
-                <label>
-                  <input
-                    class="gallery__season"
-                    type="radio"
-                    name="season"
-                    id=""
-                  />
+                <label class="gallery__season">
+                  <input type="radio" name="season" id="spring" />
                   Spring
                 </label>
-                <label>
-                  <input
-                    class="gallery__season"
-                    type="radio"
-                    name="season"
-                    id=""
-                  />
+                <label class="gallery__season">
+                  <input type="radio" name="season" id="summer" />
                   Summer
                 </label>
-                <label>
-                  <input
-                    class="gallery__season"
-                    type="radio"
-                    name="season"
-                    id=""
-                  />
+                <label class="gallery__season">
+                  <input type="radio" name="season" id="autumn" />
                   Autumn
                 </label>
               </div>
               <div class="gallery__items">
-                <div class="gallery__item">
+                <!-- <div class="gallery__item">
                   <div class="gallery-item__title">
                     Staff Picks <span></span>
                   </div>
@@ -230,7 +282,7 @@
                   <div class="gallary-item__img">
                     <img src="./img/winterBook3.jpg" alt="" />
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -377,7 +429,7 @@
                         type="tel"
                       />
                     </div>
-                    <button class="card-form__btn" type="submit">
+                    <button class="card-form__btn btn" type="submit">
                       Check the card
                     </button>
                   </form>
@@ -389,8 +441,8 @@
                     account or you can register a new account
                   </div>
                   <form class="card-reader__form" action="">
-                    <button class="card-reader__btn">Sign Up</button>
-                    <button class="card-reader__btn">Log in</button>
+                    <button class="card-reader__btn btn">Sign Up</button>
+                    <button class="card-reader__btn btn">Log in</button>
                   </form>
                 </div>
               </div>
@@ -459,6 +511,6 @@
         </div>
       </footer>
     </div>
-    <script src="./js/script.js"></script>
+    <script type="module" src="./js/script.js"></script>
   </body>
 </html>
